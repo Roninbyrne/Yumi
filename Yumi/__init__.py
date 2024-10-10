@@ -10,4 +10,4 @@ git()
 dbb()
 heroku()
 
-app = Ronin()
+app = RoninBot()
