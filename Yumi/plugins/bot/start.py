@@ -12,7 +12,6 @@ from Yumi.utils.database import (
     add_served_user,
     blacklisted_chats,
     is_banned_user,
-    is_on_off,
 )
 from Yumi.utils.decorators.language import LanguageStart
 from Yumi.utils.formatters import get_readable_time
@@ -22,8 +21,13 @@ from strings import get_string
 
 # Define the get_lang function
 async def get_lang(chat_id):
-    # Placeholder logic: Replace with actual logic to fetch the language from the database
     return 'en'  # Default to English
+
+# Define the is_on_off function
+async def is_on_off(feature_id: int) -> bool:
+    # Placeholder logic: Replace with actual logic to check if the feature is enabled
+    # For example, you might check a database or a config variable.
+    return True  # Assume the feature is enabled for now
 
 @app.on_message(filters.command(["start"]) & filters.private & ~BANNED_USERS)
 @LanguageStart
@@ -43,7 +47,6 @@ async def start_pm(client, message: Message, _):
             text=f"{message.from_user.mention} ᴊᴜsᴛ sᴛᴀʀᴛᴇᴅ ᴛʜᴇ ʙᴏᴛ.\n\n<b>ᴜsᴇʀ ɪᴅ :</b> <code>{message.from_user.id}</code>\n<b>ᴜsᴇʀɴᴀᴍᴇ :</b> @{message.from_user.username}",
         )
 
-
 @app.on_message(filters.command(["start"]) & filters.group & ~BANNED_USERS)
 @LanguageStart
 async def start_gp(client, message: Message, _):
@@ -53,7 +56,6 @@ async def start_gp(client, message: Message, _):
         reply_markup=InlineKeyboardMarkup(out),
     )
     return await add_served_chat(message.chat.id)
-
 
 @app.on_message(filters.new_chat_members, group=-1)
 async def welcome(client, message: Message):
