@@ -7,7 +7,6 @@ from Yumi import LOGGER, app
 from Yumi.misc import sudo
 from Yumi.utils.database import get_banned_users, get_gbanned
 from config import BANNED_USERS
-from Yumi.plugins.bot import help
 from Yumi.plugins.bot import start
 from Yumi.plugins.misc import broadcast
 from Yumi.plugins.sudo import blchat, block, gban, restart, sudoers 
