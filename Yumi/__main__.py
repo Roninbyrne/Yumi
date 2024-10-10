@@ -3,6 +3,7 @@ import asyncio
 from pyrogram import idle
 
 import config
+from Yumi.plugins.bot import help
 from Yumi import LOGGER, app
 from Yumi.misc import sudo
 from Yumi.utils.database import get_banned_users, get_gbanned
