@@ -5,7 +5,7 @@ from Yumi import app
 from Yumi.misc import SUDOERS
 from Yumi.utils.database import add_sudo, remove_sudo
 from Yumi.utils.extraction import extract_user
-from Yumi.utils.inline import close_markup
+from Yumi.utils.inline import close_markup  # This should work now
 from config import BANNED_USERS, OWNER_ID
 
 
