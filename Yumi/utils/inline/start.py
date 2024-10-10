@@ -27,21 +27,8 @@ def private_panel(_):
             InlineKeyboardButton(text=_["S_B_6"], url=config.SUPPORT_CHANNEL),
         ],
         [
-            InlineKeyboardButton(text="Ƭᴇᴀᴍ ◦ 𝐀ʀᴏɴᴀ ❆", callback_data="team_leslay"),
+            InlineKeyboardButton(text="Ƭᴇᴀᴍ ◦ 𝐀ʀᴏɳᴀ ❆", callback_data="team_leslay"),
         ],
         [InlineKeyboardButton(text=_["S_B_4"], callback_data="settings_back_helper")],
-    ]
-    return buttons
-
-# Define help_panel directly in this file
-def help_panel(_):
-    buttons = [
-        [
-            InlineKeyboardButton(text=_["H_B_1"], callback_data="help_info_1"),
-            InlineKeyboardButton(text=_["H_B_2"], callback_data="help_info_2"),
-        ],
-        [
-            InlineKeyboardButton(text=_["S_B_2"], url=config.SUPPORT_CHAT),
-        ],
     ]
     return buttons
