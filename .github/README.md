@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://envs.sh/Ims.jpg">
+  <img src="https://envs.sh/niT.jpg">
 </p>
 
 <p align="center">
