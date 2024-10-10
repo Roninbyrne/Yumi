@@ -1,11 +1,10 @@
 from pyrogram import filters
-from pyrogram.types import Message
+from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 
 from Yumi import app
 from Yumi.misc import SUDOERS
 from Yumi.utils.database import add_sudo, remove_sudo
 from Yumi.utils.extraction import extract_user
-from Yumi.utils.inline import close_markup  # This should work now
 from config import BANNED_USERS, OWNER_ID
 
 
@@ -67,4 +66,8 @@ async def sudoers_list(client, message: Message, _):
     if not text:
         await message.reply_text(_["sudo_7"])
     else:
-        await message.reply_text(text, reply_markup=close_markup(_))
+        # Define the inline keyboard directly
+        close_button = InlineKeyboardButton("Close", callback_data="close")
+        reply_markup = InlineKeyboardMarkup([[close_button]])
+
+        await message.reply_text(text, reply_markup=reply_markup)
