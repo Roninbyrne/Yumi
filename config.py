@@ -6,12 +6,11 @@ from pyrogram import filters
 load_dotenv()
 
 # Configuration for Telegram bot and MongoDB connection
-API_ID = 
-API_HASH = ""
-BOT_TOKEN = ""
+API_ID = 20948356
+API_HASH = "6b202043d2b3c4db3f4ebefb06f2df12"
+BOT_TOKEN = "7809892112:AAEYjt5ovEdzSXQPZ4VtNHLTACDdiRma6O8"
 MONGO_DB_URI = "mongodb+srv://projectarona:projectarona@projectarona.f2ba1.mongodb.net/?retryWrites=true&w=majority&appName=projectarona"
 
-DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 60))
 LOGGER_ID = -1002063031380
 OWNER_ID = 7337748194
 CHANNEL_ID = -1002059639505
