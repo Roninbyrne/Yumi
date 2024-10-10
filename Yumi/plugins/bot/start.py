@@ -13,7 +13,6 @@ from Yumi.utils.database import (
     blacklisted_chats,
     is_banned_user,
 )
-from Yumi.utils.decorators.language import LanguageStart
 from Yumi.utils.formatters import get_readable_time
 from Yumi.utils.inline import help_pannel, private_panel, start_panel
 from config import BANNED_USERS
