@@ -8,6 +8,31 @@ from Yumi.utils.extraction import extract_user
 from config import BANNED_USERS, OWNER_ID
 
 
+# Example language data
+LANGUAGE_DATA = {
+    'en': {
+        "general_1": "Please reply to a user to add them as sudo.",
+        "sudo_1": "{} is already a sudo user.",
+        "sudo_2": "{} has been added as a sudo user.",
+        "sudo_3": "{} is not a sudo user.",
+        "sudo_4": "{} has been removed from sudo users.",
+        "sudo_5": "Sudo Users List:",
+        "sudo_6": "Sudo Users:",
+        "sudo_7": "No sudo users found.",
+        "sudo_8": "An error occurred while processing."
+    },
+    # Add more languages as needed
+}
+
+# Define the language decorator
+def language(func):
+    async def wrapper(client, message: Message, *args, **kwargs):
+        lang_code = 'en'  # Default language; can be adjusted based on user preferences
+        _ = LANGUAGE_DATA[lang_code]  # Get language strings
+        return await func(client, message, _, *args, **kwargs)
+    return wrapper
+
+
 @app.on_message(filters.command(["addsudo"]) & filters.user(OWNER_ID))
 @language
 async def useradd(client, message: Message, _):
@@ -66,8 +91,6 @@ async def sudoers_list(client, message: Message, _):
     if not text:
         await message.reply_text(_["sudo_7"])
     else:
-        # Define the inline keyboard directly
         close_button = InlineKeyboardButton("Close", callback_data="close")
         reply_markup = InlineKeyboardMarkup([[close_button]])
-
         await message.reply_text(text, reply_markup=reply_markup)
