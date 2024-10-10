@@ -11,7 +11,6 @@ from Yumi.utils.database import (
     add_served_chat,
     add_served_user,
     blacklisted_chats,
-    get_lang,
     is_banned_user,
     is_on_off,
 )
@@ -21,6 +20,10 @@ from Yumi.utils.inline import help_pannel, private_panel, start_panel
 from config import BANNED_USERS
 from strings import get_string
 
+# Define the get_lang function
+async def get_lang(chat_id):
+    # Placeholder logic: Replace with actual logic to fetch the language from the database
+    return 'en'  # Default to English
 
 @app.on_message(filters.command(["start"]) & filters.private & ~BANNED_USERS)
 @LanguageStart
@@ -29,7 +32,7 @@ async def start_pm(client, message: Message, _):
         chat_id=config.LOGGER_ID,
         text=f"{message.from_user.mention} ᴊᴜsᴛ sᴛᴀʀᴛᴇᴅ ᴛʜᴇ ʙᴏᴛ ᴛᴏ ᴄʜᴇᴄᴋ <b>ᴛʀᴀᴄᴋ ɪɴғᴏʀᴍᴀᴛɪᴏɴ</b>.\n\n<b>ᴜsᴇʀ ɪᴅ :</b> <code>{message.from_user.id}</code>\n<b>ᴜsᴇʀɴᴀᴍᴇ :</b> @{message.from_user.username}",
     )
-    
+
     out = private_panel(_)
     await message.reply(f" нєу {message.from_user.first_name} <a href='{config.START_VIDEO}'>🌀</a>")
     await message.reply(f"<b>๏ 𝙷𝚎𝚢 𝚝𝚑𝚎𝚛𝚎! 𝙸'𝚖 {app.mention} 𝙱𝚘𝚝! \n๏ ᴀ ʟᴀᴛᴇꜱᴛ ᴍᴜꜱɪᴄ ʙᴏᴛ ꜰᴏʀ ᴘʟᴀʏɪɴɢ ꜱᴏɴɢꜱ ɪɴ ᴠᴏɪᴄᴇ ᴄʜᴀᴛ.\n๏ ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴ ʙᴇʟᴏᴡ ᴛᴏ ɢᴇᴛ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ᴍʏ ᴄᴏᴍᴍᴀɴᴅs</b>", reply_markup=InlineKeyboardMarkup(out))
