@@ -1,8 +1,10 @@
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-from app import app
-from app import config
+from config import BOT_TOKEN, API_ID, API_HASH, MONGO_DB_URI, Helpers
+
+app = Client("my_bot", bot_token=BOT_TOKEN, api_id=API_ID, api_hash=API_HASH)
+
 
 @app.on_message(filters.command(["start"]) & filters.private)
 async def f_start(_, message):
