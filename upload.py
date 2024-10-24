@@ -1,7 +1,11 @@
 from pyrogram import Client, filters
+<<<<<<< HEAD
 from config import BOT_TOKEN, API_ID, API_HASH
 
 app = Client("my_bot", bot_token=BOT_TOKEN, api_id=API_ID, api_hash=API_HASH)
+=======
+from app import app
+>>>>>>> 5dbb700 (Initial commit with project files)
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from pymongo import MongoClient
 from datetime import datetime, timedelta
