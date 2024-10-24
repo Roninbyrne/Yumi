@@ -1,11 +1,11 @@
-API_ID = "your_api_id"
-API_HASH = "your_api_hash"
+API_ID = "20948356"
+API_HASH = "6b202043d2b3c4db3f4ebefb06f2df12"
 START_VIDEO = "your_start_video_link"
-SUPPORT_CHAT = "your_support_chat_link"
-SUPPORT_CHANNEL = "your_support_channel_link"
-OWNER_USERNAME = "your_owner_username"
-BOT_USERNAME = "your_bot_username"
-MONGO_DB_URI = "your_mongo_db_uri"
-BOT_TOKEN = "your_bot_token"
+SUPPORT_CHAT = "https://t.me/PhoenixXsupport"
+SUPPORT_CHANNEL = "https://t.me/PhoenixXsupport"
+OWNER_USERNAME = "itsR0NIn"
+BOT_USERNAME = "YumiZBot"
+MONGO_DB_URI = "mongodb+srv://chalizard9780:Hiww3yxAgyNc5Cfn@licha.nda4hyl.mongodb.net/?retryWrites=true&w=majority&appName=Licha"
+BOT_TOKEN = "7809892112:AAEYjt5ovEdzSXQPZ4VtNHLTACDdiRma6O8"
 
-Helpers = [123456789]
+Helpers = [7337748194]
