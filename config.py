@@ -40,7 +40,7 @@ votemode = {}
 autoclean = []
 confirmer = {}
 
-START_VIDEO = getenv("START_VIDEO", "https://envs.sh/niT.jpg")
+START_VIDEO=getenv("START_VIDEO", "https://envs.sh/niT.jpg")
 START_IMG_URL = getenv("START_IMG_URL", "https://te.legra.ph/file/25efe6aa029c6baea73ea.jpg")
 PING_IMG_URL = getenv("PING_IMG_URL", "https://unitedcamps.in/Images/file_5134.jpg")
 PLAYLIST_IMG_URL = "https://te.legra.ph/file/4ec5ae4381dffb039b4ef.jpg"
